@@ -45,6 +45,7 @@ public class TestKittenDistributedShell {
     LOG.info("Starting up YARN cluster");
     conf.setInt("yarn.scheduler.fifo.minimum-allocation-mb", 128);
     conf.set("yarn.nodemanager.vmem-pmem-ratio", "20.0");
+    conf.set("yarn.nodemanager.disk-health-checker.max-disk-utilization-per-disk-percentage", "95");
     if (yarnCluster == null) {
       yarnCluster = new MiniYARNCluster(TestKittenDistributedShell.class.getName(),
           1, 1, 1);
@@ -86,6 +87,6 @@ public class TestKittenDistributedShell {
     client.setConf(conf);
     System.out.println("Running...");
     assertEquals(0, client.run(new String[]{config, "distshell"}));
-    assertEquals(12, Files.readLines(tmpFile, Charsets.UTF_8).size()); 
+    assertEquals(14, Files.readLines(tmpFile, Charsets.UTF_8).size());
   }
 }
