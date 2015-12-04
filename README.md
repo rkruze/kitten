@@ -3,7 +3,7 @@
 ## Introduction
 
 Kitten is a set of tools for writing and running applications on YARN,
-the general-purpose resource scheduling framework that ships with Hadoop 2.2.0.
+the general-purpose resource scheduling framework that ships with Hadoop.
 Kitten handles the boilerplate around configuring and launching YARN
 containers, allowing developers to easily deploy distributed applications that
 run under YARN.
@@ -24,9 +24,9 @@ from this directory. That will build the common, master, and client subprojects.
 
 The `java/examples/distshell` directory contains an example configuration file
 that can be used to run the Kitten version of the Distributed Shell example
-application that ships with Hadoop 2.2.0. To run the example, execute:
+application that ships with CDH 5.4. To run the example, execute:
 
-	hadoop jar kitten-client-0.2.0-jar-with-dependencies.jar distshell.lua distshell
+	hadoop jar kitten-client-0.3.0-jar-with-dependencies.jar distshell.lua distshell
 
 where the jar file is in the `java/client/target` directory. You should also copy the
 application master jar file from `java/master/target` to a directory where it can be
